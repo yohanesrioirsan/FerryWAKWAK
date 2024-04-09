@@ -10,6 +10,10 @@ const messagesArr = [
   "Ape sih lu",
   "Iye dah wing",
   "CBK lu ya",
+  "Wang Ajier",
+  "Jangan sok asik wing",
+  "你是中国人，对吧",
+  "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG5sc2Z2YWlwM2RybzI2YzY0NHN3OWI3emJqa211cjlsZDB5c3I0eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUPJPIySmYr4BEi7NS/giphy.gif",
 ];
 
 client.once(Events.ClientReady, (readyClient) => {
@@ -26,15 +30,15 @@ client.on("messageCreate", (message) => {
       .reply(sentToEwink)
       .then((sentMessage) => console.log(`Gw Bales: ${sentMessage.content}`))
       .catch((error) => console.error("Error:", error));
-  } else if (message.mentions.has(client.user)) {
+  } 
+  
+  if (message.mentions.has(client.user)) {
     console.log("Ada yang mention");
     message
       .reply("Apa sih lu manggil-manggil BRISIK!")
       .then((sentMessage) => console.log(`Gw Bales: ${sentMessage.content}`))
       .catch((error) => console.error("Error : ", error));
-  } else { 
-    console.log("ada yang error");
-  }
+  } 
 });
 
 client.login(token);
