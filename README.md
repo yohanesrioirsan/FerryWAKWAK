@@ -6,6 +6,29 @@ Main Feature :
 - Auto replies to any message when the bot get mentioned.
 - To annoy / troll your friends.
 
+
+How To Run : 
+- Git Clone this repository
+```
+git clone https://github.com/yohanesrioirsan/FerryWAKWAK.git
+```
+- Install all dependencies
+```
+npm install
+```
+- Create local config for discord bot token and discord user_id. Create file name config.json. In that file copy this json.
+```
+{ 
+    "token": "YOUR_BOT_TOKEN",
+    "user_id": "SPECIFIC_USER_ID_FOR_BOT_TO_REPLY"
+}
+```
+- Run the script
+```
+node main.js
+```
+
+
 Build with DiscordJS.
 
 ![ezgif-7-9348db4d41](https://github.com/yohanesrioirsan/FerryWAKWAK/assets/82473445/e0be42e5-b724-4343-8451-62178a76575c)
