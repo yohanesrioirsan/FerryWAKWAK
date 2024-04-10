@@ -62,7 +62,7 @@ client.on("messageCreate", (message) => {
         );
 
         if (response && response.data) {
-          console.log("Response data:", response.data);
+          console.log("Checking valorant data..");
           if (
             response.data.data.current_data &&
             response.data.data.highest_rank
