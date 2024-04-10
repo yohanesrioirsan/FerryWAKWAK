@@ -1,4 +1,4 @@
-const { Client, Events, GatewayIntentBits } = require("discord.js");
+const { Client, Events, GatewayIntentBits, ActivityType } = require("discord.js");
 const { token, user_id } = require("./config.json");
 const axios = require("axios");
 
@@ -26,6 +26,12 @@ const messagesArr = [
 
 client.once(Events.ClientReady, (readyClient) => {
   console.log(`${readyClient.user.tag} is online`);
+
+  client.user.setActivity({
+    name: 'SWEATER WEATHER',
+    type: ActivityType.Streaming,
+    url: 'https://www.youtube.com/watch?v=p40RlA1cTpQ',
+  })
 });
 
 // Kalau Ewing ngirim chat
