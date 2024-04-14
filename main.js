@@ -51,13 +51,13 @@ client.on("messageCreate", (message) => {
 
 
 
-  // Prefix Command with !, e.g !infoakun, !tanyaperi
+  // Prefix Command with !, e.g !infovalo, !tanyaperi
   if (!message.content.startsWith(prefix)) return;
 
-  if (message.content.startsWith(`${prefix}infoakun`)) {
+  if (message.content.startsWith(`${prefix}infovalo`)) {
     console.log("Received message:", message.content);
     console.log("ada yang mau cek akun");
-    const command = message.content.slice("!infoakun".length).trim().split("#");
+    const command = message.content.slice("!infovalo".length).trim().split("#");
     console.log(command[0], command[1]);
     (async () => {
       try {
@@ -92,7 +92,7 @@ client.on("messageCreate", (message) => {
       } catch (error) {
         message.reply(
           `${message.content
-            .slice("!infoakun".length)
+            .slice("!infovalo".length)
             .trim()} kaga ada kocak ngetik yang bener.`
         );
         console.log("Ada yang error");
@@ -102,7 +102,7 @@ client.on("messageCreate", (message) => {
 
   if (message.content.startsWith(`${prefix}tanyaperi`)) {
     console.log("Ada yang mau nanya nih");
-    const command = message.content.slice("!infoakun".length).trim();
+    const command = message.content.slice("!infovalo".length).trim();
     (async () => {
       try {
         const response = await axios.get(
