@@ -1,5 +1,10 @@
-const { Client, Events, GatewayIntentBits, ActivityType } = require("discord.js");
-const { token, user_id } = require("./config.json");
+const {
+  Client,
+  Events,
+  GatewayIntentBits,
+  ActivityType
+} = require("discord.js");
+const { token, user_id, apiKey } = require("./config.json");
 const axios = require("axios");
 
 const client = new Client({
@@ -11,31 +16,21 @@ const client = new Client({
 });
 
 const prefix = "!";
-
-const messagesArr = [
-  "WAK WAK",
-  "Y-y-y-YANG BENER LU WINGG??",
-  "Ape sih lu",
-  "Iye dah wing",
-  "CBK lu ya",
-  "Wang Ajier",
-  "Jangan sok asik wing",
-  "你是中国人，对吧",
-  "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG5sc2Z2YWlwM2RybzI2YzY0NHN3OWI3emJqa211cjlsZDB5c3I0eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUPJPIySmYr4BEi7NS/giphy.gif",
-];
+const messagesArr = require("./message.json");
 
 client.once(Events.ClientReady, (readyClient) => {
   console.log(`${readyClient.user.tag} is online`);
 
   client.user.setActivity({
-    name: 'SWEATER WEATHER',
+    name: "SWEATER WEATHER",
     type: ActivityType.Streaming,
-    url: 'https://www.youtube.com/watch?v=p40RlA1cTpQ',
-  })
+    url: "https://www.youtube.com/watch?v=p40RlA1cTpQ",
+  });
 });
 
-// Kalau Ewing ngirim chat
+// Discord BOT Message Create Setup
 client.on("messageCreate", (message) => {
+  // Simple reply command
   if (message.author.id === user_id) {
     console.log(`Ewing ngirim chat`);
     const sentToEwink =
@@ -54,6 +49,9 @@ client.on("messageCreate", (message) => {
       .catch((error) => console.error("Error : ", error));
   }
 
+
+
+  // Prefix Command with !, e.g !infoakun, !tanyaperi
   if (!message.content.startsWith(prefix)) return;
 
   if (message.content.startsWith(`${prefix}infoakun`)) {
@@ -98,6 +96,32 @@ client.on("messageCreate", (message) => {
             .trim()} kaga ada kocak ngetik yang bener.`
         );
         console.log("Ada yang error");
+      }
+    })();
+  }
+
+  if (message.content.startsWith(`${prefix}tanyaperi`)) {
+    console.log("Ada yang mau nanya nih");
+    const command = message.content.slice("!infoakun".length).trim();
+    (async () => {
+      try {
+        const response = await axios.get(
+          `https://api.velixs.com/nakiri?text=${command}&apikey=${apiKey}`
+        );
+
+        const responseData = response.data.data.reply;
+        if (responseData.length > 2000) {
+          const splitMessage = responseData.match(/[\s\S]{1,2000}/g);
+          for (const messageChunk of splitMessage) {
+            message.reply(messageChunk);
+          }
+        } else {
+          message.reply(responseData);
+        }
+
+      } catch (error) {
+        message.reply("lagi ga mute buat jawab nih.");
+        console.log(error);
       }
     })();
   }

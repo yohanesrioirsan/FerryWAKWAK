@@ -10,10 +10,13 @@ Main Feature :
 
 Available Commands :
 
-- !infoakun = Check Valorant account rank and highest rank. (e.g) VYG Sylvette#dell
-the bots will reply data from fetched API.
+- !infoakun = Check Valorant account rank and highest rank. (e.g) VYG Sylvette#dell.
+  the bots will reply data from fetched API.
 
 ![image](https://github.com/yohanesrioirsan/FerryWAKWAK/assets/82473445/c3a438d1-63f1-4ab1-8005-5f4de4319b12)
+
+- !tanyaperi = Ask the bot about everything. (e.g) !tanyaperi how to build a pc.
+  the bots will reply data from fetched API.
 
 - Coming Soon..
 
@@ -31,12 +34,23 @@ git clone https://github.com/yohanesrioirsan/FerryWAKWAK.git
 npm install
 ```
 
+- Create custom message json file for bot custom message (Array)
+
+```
+[
+    "message 1",
+    "message 2",
+    "message 3"
+]
+```
+
 - Create local config for discord bot token and discord user_id. Create file name config.json. In that file copy this json.
 
 ```
 {
     "token": "YOUR_BOT_TOKEN",
-    "user_id": "SPECIFIC_USER_ID_FOR_BOT_TO_REPLY"
+    "user_id": "SPECIFIC_USER_ID_FOR_BOT_TO_REPLY",
+    "apiKey": "API_KEY"
 }
 ```
 
@@ -49,7 +63,8 @@ node main.js
 Build with DiscordJS.
 
 Special thanks to
-<a href="https://henrikdev.xyz/">Henrik Dev</a> for the unofficial Valorant API
+<a href="https://henrikdev.xyz/">Henrik Dev</a> for the unofficial Valorant API.
+<a href="https://velixs.com/">Velixs Team</a> for the Nakiri AI API (Free).
 
 ![ezgif-7-9348db4d41](https://github.com/yohanesrioirsan/FerryWAKWAK/assets/82473445/e0be42e5-b724-4343-8451-62178a76575c)
 
