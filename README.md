@@ -18,6 +18,9 @@ Available Commands :
 - !tanyaperi = Ask the bot about everything. (e.g) !tanyaperi how to build a pc.
   the bots will reply data from fetched API.
 
+![image](https://github.com/yohanesrioirsan/FerryWAKWAK/assets/82473445/51198ddb-224f-40ba-b818-ef99937ed23c)
+
+
 - Coming Soon..
 
 How To Run :
