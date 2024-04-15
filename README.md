@@ -10,7 +10,7 @@ Main Feature :
 
 Available Commands :
 
-- !infoakun = Check Valorant account rank and highest rank. (e.g) VYG Sylvette#dell.
+- !infovalo = Check Valorant account rank and highest rank. (e.g) VYG Sylvette#dell.
   the bots will reply data from fetched API.
 
 ![image](https://github.com/yohanesrioirsan/FerryWAKWAK/assets/82473445/c3a438d1-63f1-4ab1-8005-5f4de4319b12)
