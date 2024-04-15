@@ -22,9 +22,8 @@ client.once(Events.ClientReady, (readyClient) => {
   console.log(`${readyClient.user.tag} is online`);
 
   client.user.setActivity({
-    name: "SWEATER WEATHER",
-    type: ActivityType.Streaming,
-    url: "https://www.youtube.com/watch?v=p40RlA1cTpQ",
+    name: "Scrim 24/7",
+    type: ActivityType.Playing,
   });
 });
 
